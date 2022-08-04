@@ -1,0 +1,29 @@
+<div class="col-md-6 offset-md-3">
+     <h3 class="text-center">Edicion de Comentario</h3>
+     <form (ngSubmit)="onSubmit()" #comentarioForm="ngForm">
+          <div class="form-group">
+               <label>Correo:</label>
+               <input type="email" class="form-control" id="email" [(ngModel)]="comentario.email" name="email" placeholder="Digite su email" #email ="ngModel" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" required>
+               <div class="alert alert-danger" *ngIf="email.invalid && (email.dirty || email.touched)">
+                    <div *ngIf="email.errors">
+                         Digite su email porfavor / con el formato user@mail.com
+                    </div>
+               </div>
+               
+
+               <label>Region:</label>
+               <select id="region" name="region" [(ngModel)]="comentario.region" class="form-control" #region="ngModel">
+                    <option [value]="item" *ngFor="let item of regiones">{{item}}</option>
+                    
+               </select>
+               
+               <label>Comentario:</label>
+               <textarea name="comentario" rows="10" cols="30" class="form-control" id="email"
+               [(ngModel)]="comentario.comentario" name="comentario" id="comentario" required placeholder="Ingrese un comentario"></textarea>
+               
+          </div>
+
+          <button class="btn btn-success" [disabled] = "!comentarioForm.form.valid" >Guardar</button>
+
+     </form>
+</div>

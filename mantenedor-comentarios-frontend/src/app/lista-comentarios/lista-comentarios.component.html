@@ -1,0 +1,25 @@
+<h2>Lista Comentarios</h2>
+
+<table class="table table-striped">
+     <thead class="table-dark">
+          <tr>
+               <th>Correo</th>
+               <th>Region</th>
+               <th>Comentario</th>
+               <th>Accion</th>
+          </tr>
+     </thead>
+
+     <tbody>
+          <tr *ngFor="let comentario of comentarios">
+               <td>{{comentario.email}}</td>
+               <td>{{comentario.region}}</td>
+               <td>{{comentario.comentario}}</td>
+               <td>
+                    <button (click)="editarComentario(comentario.id)" class="btn btn-info">Editar</button>
+                    <button (click)="eliminarComentario(comentario.id)" class="btn btn-danger" style="margin-left: 10px;">Eliminar</button>
+               </td>
+          </tr>
+     </tbody>
+
+</table>

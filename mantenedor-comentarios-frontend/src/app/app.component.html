@@ -1,0 +1,14 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+     <ul class="navbar-nav">
+          <li class="nav-item">
+               <a routerLink="comentarios" routerLinkActive="active" class="nav-link">Lista de Comentarios</a>
+          </li>
+          <li class="nav-item">
+               <a routerLink="agregar-comentario" routerLinkActive="active" class="nav-link">Agregar Comentarios</a>
+          </li>
+     </ul>
+</nav>
+<h1 class="text-center" >{{ title }}</h1>
+<div class="container">
+     <router-outlet></router-outlet>
+</div>
